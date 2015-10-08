@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Redactor Autocomplete Example</title>
+ 
+    <meta charset="utf-8">
+ 
+    <link rel="stylesheet" href="http://imperavi.com/js/redactor/redactor.css" />
+    <link rel="stylesheet" href="css/redactor.autocomplete.css" />
+ 
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <script src="http://imperavi.com/js/redactor/redactor.js"></script>
+    <script src="scripts/redactor.autocomplete.js"></script>
+ 
+    <script type="text/javascript">
+    $(function()
+    {
+        $('#content').redactor({
+			focus: true,
+			linebreaks: true,
+			plugins: ['autocomplete'],
+			autocomplete_options: {
+                    triggerString: "{{ ", // string to match to start autocomplete
+                    noMatchMax: 2, // after n characters that don't match a label, close autocomplete
+                    labelValueHash: [
+                        // ['label/search string goes here', 'autocomplete string goes here']
+                        ['subscriber.firstname', '{{ subscriber.firstname default="subscriber" }}'],
+                        ['subscriber.middlename', '{{ subscriber.middlename }}']
+                    ]
+                },
+		});
+    });
+    </script>
+ 
+</head>
+<body>
+	<h1 style="text-align:center;">
+		Redactor Autocomplete Example
+	</h1>
+    <div id="page" style="max-width:500px; margin:20px auto;">
+        <textarea id="content" name="content"></textarea>
+    </div>
+</body>
+</html>

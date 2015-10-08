@@ -1,0 +1,26 @@
+.redactor_AutocompleteDropDown 
+{
+	position:absolute;
+	z-index:99999;
+	top:100%;
+	left:0;
+	background:#fff;
+	border:1px solid #ccc;
+}
+.redactor_AutocompleteDropDown ul 
+{
+	margin:0;
+	padding:0;
+	list-style:none;
+}
+.redactor_AutocompleteDropDown ul li 
+{
+	cursor:pointer;
+	margin:0;
+	padding:5px 15px;
+	list-style:none;
+}
+.redactor_AutocompleteDropDown ul li.selected 
+{
+	background:#eee;
+}
